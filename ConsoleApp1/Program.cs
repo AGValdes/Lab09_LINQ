@@ -38,7 +38,7 @@ namespace Lab09_LINQ
             var query = from feature in places.features
                         select feature.properties.neighborhood;
             int counterForDisplay = 1;
-            foreach(JObject feature in query)
+            foreach(var feature in query)
             {
                 if (feature != null)
                 {
@@ -59,7 +59,7 @@ namespace Lab09_LINQ
             
             
             int counterForDisplay = 1;
-            foreach (JObject feature in noDuplicates)
+            foreach (var feature in noDuplicates)
             {
                 Console.WriteLine($"{counterForDisplay}. {feature}");
                 counterForDisplay++;
@@ -72,7 +72,7 @@ namespace Lab09_LINQ
                          select feature.properties.neighborhood).Distinct();
 
             int counterForDisplay = 1;
-            foreach (JObject feature in query)
+            foreach (var feature in query)
             {
                 Console.WriteLine($"{counterForDisplay}. {feature}");
                 counterForDisplay++;
@@ -84,7 +84,7 @@ namespace Lab09_LINQ
             int counterForDisplay = 1;
             var query = places.features.Select(feature => feature.properties.neighborhood);
            
-            foreach (JObject feature in query)
+            foreach (var feature in query)
             {
                 Console.WriteLine($"{counterForDisplay}. {feature}");
                 counterForDisplay++;
